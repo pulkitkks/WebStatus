@@ -6,6 +6,14 @@ var handlers = require("./lib/handlers");
 var  _data = require("./lib/data");
 var helpers = require("./lib/helpers");
 
+helpers.sendTwilio('+919868610050','Hello',function(e){
+	if(e){
+		console.log(e);
+	}else{
+		console.log("Successfully Sent Message");
+	}
+});
+
 var server = http.createServer(function(req,res){
 	var decoder = new StringDecoder('utf-8');
 	var parsedUrl = url.parse(req.url,true);
